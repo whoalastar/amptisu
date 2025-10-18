@@ -1,479 +1,372 @@
 <!DOCTYPE html>
-<html ⚡ lang="id">
+<html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SYSTEM BREACHED</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
   
-  <title>TISU16 - Situs Slot Gacor Terpercaya 2025</title>
-  <meta name="description" content="TISU16 adalah situs slot gacor terpercaya dengan RTP tertinggi. Daftar sekarang dan nikmati bonus melimpah.">
-  <link rel="canonical" href="https://tisu16.com/">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  
-  <style amp-custom>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Share Tech Mono', monospace;
+    background: #000;
+    color: #0f0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Matrix rain effect */
+  #matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Glitch animation */
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
     }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
-      color: #ffffff;
-      min-height: 100vh;
-      overflow-x: hidden;
+    20% {
+      transform: translate(-2px, 2px);
     }
-    
-    a {
-      text-decoration: none;
-      color: inherit;
+    40% {
+      transform: translate(-2px, -2px);
     }
-    
-    .bg-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
-      z-index: 0;
-      pointer-events: none;
+    60% {
+      transform: translate(2px, 2px);
     }
-    
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 20px;
-      position: relative;
-      z-index: 1;
+    80% {
+      transform: translate(2px, -2px);
     }
-    
-    .header {
-      text-align: center;
-      padding: 60px 20px 40px;
-    }
-    
-    .logo {
-      font-size: 90px;
-      font-weight: 900;
-      letter-spacing: -3px;
-      line-height: 1;
-      margin-bottom: 30px;
-    }
-    
-    .logo-part1 {
-      background: linear-gradient(135deg, #ff0080 0%, #ff0000 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .logo-part2 {
-      background: linear-gradient(135deg, #00d4ff 0%, #0080ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .badge {
-      display: inline-block;
-      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
-      border: 2px solid #ffd700;
-      border-radius: 50px;
-      padding: 15px 40px;
-    }
-    
-    .badge-text {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .hero {
-      margin: 50px auto;
-      max-width: 1000px;
-    }
-    
-    .hero-card {
-      background: linear-gradient(135deg, rgba(26, 10, 46, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
-      border-radius: 30px;
-      padding: 60px 40px;
-      position: relative;
-      border: 2px solid rgba(255, 215, 0, 0.3);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    }
-    
-    .status {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      background: linear-gradient(135deg, #00ff88, #00cc6a);
-      color: #000000;
-      padding: 10px 25px;
-      border-radius: 25px;
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-    
-    .hero-content {
-      text-align: center;
-    }
-    
-    .title {
-      font-size: 56px;
-      font-weight: 900;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    
-    .title-gold {
-      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: block;
-    }
-    
-    .title-blue {
-      background: linear-gradient(135deg, #00d4ff 0%, #0080ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: block;
-    }
-    
-    .subtitle {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 40px;
-    }
-    
-    .highlight {
-      color: #00ff88;
-      font-weight: 900;
-    }
-    
-    .pills {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-    
-    .pill {
-      background: rgba(0, 0, 0, 0.6);
-      border: 2px solid;
-      border-radius: 30px;
-      padding: 14px 28px;
-      font-weight: 900;
-      font-size: 15px;
-      letter-spacing: 1px;
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-    
-    .pill:hover {
-      transform: translateY(-3px);
-    }
-    
-    .pill-gold {
-      border-color: #ffd700;
-      color: #ffd700;
-    }
-    
-    .pill-green {
-      border-color: #00ff88;
-      color: #00ff88;
-    }
-    
-    .pill-red {
-      border-color: #ff0055;
-      color: #ff0055;
-    }
-    
-    .image-section {
-      margin: 50px auto;
-      text-align: center;
-      max-width: 600px;
-    }
-    
-    .promo-img {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-      border: 3px solid rgba(255, 215, 0, 0.3);
-    }
-    
-    .cta-section {
-      max-width: 700px;
-      margin: 60px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    
-    .btn {
-      display: block;
-      padding: 25px 50px;
-      border-radius: 20px;
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-align: center;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-    }
-    
-    .btn-primary {
-      background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-      color: #000000;
-    }
-    
-    .btn-secondary {
-      background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
-      color: #000000;
-    }
-    
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin: 60px 0;
-    }
-    
-    .card {
-      background: linear-gradient(135deg, rgba(26, 10, 46, 0.6) 0%, rgba(10, 10, 10, 0.8) 100%);
-      border: 2px solid rgba(255, 215, 0, 0.2);
-      border-radius: 20px;
-      padding: 35px 30px;
-      text-align: center;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-    
-    .card:hover {
-      transform: translateY(-10px);
-      border-color: rgba(255, 215, 0, 0.5);
-    }
-    
-    .card-icon {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    
-    .card-title {
-      font-size: 22px;
-      font-weight: 900;
-      color: #ffd700;
-      margin-bottom: 10px;
-    }
-    
-    .card-text {
-      font-size: 15px;
-      color: #cccccc;
-      line-height: 1.6;
-    }
-    
-    .footer {
-      margin-top: 100px;
-      padding: 40px 20px;
-      text-align: center;
-      border-top: 2px solid rgba(255, 215, 0, 0.2);
-      background: rgba(10, 10, 10, 0.8);
-    }
-    
-    .footer-text {
-      color: #888888;
-      font-size: 15px;
-      line-height: 2;
-    }
-    
-    .footer-text p {
-      margin: 10px 0;
-    }
-    
-    .footer-link {
-      color: #ffd700;
-      font-weight: 700;
-      transition: color 0.3s ease;
-    }
-    
-    .footer-link:hover {
-      color: #ffed4e;
-    }
-    
-    .copyright {
-      margin-top: 20px;
-      font-size: 13px;
-      color: #666666;
-    }
-    
-    @media (max-width: 768px) {
-      .logo {
-        font-size: 60px;
-      }
-      
-      .badge-text {
-        font-size: 14px;
-        letter-spacing: 2px;
-      }
-      
-      .title {
-        font-size: 36px;
-      }
-      
-      .subtitle {
-        font-size: 20px;
-      }
-      
-      .hero-card {
-        padding: 40px 25px;
-      }
-      
-      .status {
-        top: 20px;
-        right: 20px;
-        font-size: 11px;
-        padding: 8px 20px;
-      }
-      
-      .btn {
-        font-size: 18px;
-        padding: 20px 40px;
-      }
-      
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "TISU16",
-    "url": "https://tisu16.com/",
-    "description": "TISU16 adalah situs slot gacor terpercaya dengan RTP tertinggi. Daftar sekarang dan nikmati bonus melimpah.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://tisu16.com/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
+    100% {
+      transform: translate(0);
     }
   }
-  </script>
-</head>
 
+  .glitch {
+    position: relative;
+    animation: glitch 0.3s infinite;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00ff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+
+  .glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00ffff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch-anim {
+    0% { clip: rect(61px, 9999px, 90px, 0); }
+    20% { clip: rect(33px, 9999px, 67px, 0); }
+    40% { clip: rect(28px, 9999px, 15px, 0); }
+    60% { clip: rect(85px, 9999px, 40px, 0); }
+    80% { clip: rect(50px, 9999px, 95px, 0); }
+    100% { clip: rect(70px, 9999px, 30px, 0); }
+  }
+
+  @keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(45px, 9999px, 25px, 0); }
+    40% { clip: rect(15px, 9999px, 80px, 0); }
+    60% { clip: rect(90px, 9999px, 35px, 0); }
+    80% { clip: rect(10px, 9999px, 60px, 0); }
+    100% { clip: rect(55px, 9999px, 20px, 0); }
+  }
+
+  /* Typing animation */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  .typing {
+    overflow: hidden;
+    border-right: 3px solid #0f0;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end), blink 0.75s step-end infinite;
+    display: inline-block;
+  }
+
+  /* Neon glow */
+  .neon {
+    text-shadow: 
+      0 0 5px #0f0,
+      0 0 10px #0f0,
+      0 0 20px #0f0,
+      0 0 40px #0f0,
+      0 0 80px #0f0;
+    animation: flicker 3s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow: 
+        0 0 5px #0f0,
+        0 0 10px #0f0,
+        0 0 20px #0f0,
+        0 0 40px #0f0,
+        0 0 80px #0f0;
+    }
+    20%, 24%, 55% {
+      text-shadow: none;
+    }
+  }
+
+  /* Skull animation */
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  .skull {
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 0 20px #ff0000);
+  }
+
+  /* Terminal effect */
+  .terminal {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  }
+
+  .terminal-line {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .terminal-prompt::before {
+    content: "root@system:~# ";
+    color: #ff0000;
+  }
+
+  /* Scan line effect */
+  @keyframes scan {
+    0% { top: 0%; }
+    100% { top: 100%; }
+  }
+
+  .scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(transparent, #0f0, transparent);
+    animation: scan 8s linear infinite;
+    z-index: 20;
+    pointer-events: none;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 5rem);
+    font-weight: 900;
+    margin: 20px 0;
+    letter-spacing: 3px;
+  }
+
+  .warning {
+    color: #ff0000;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    margin: 15px 0;
+    font-weight: bold;
+  }
+
+  .message {
+    color: #0f0;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    margin: 10px 0;
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  .signature {
+    color: #00ffff;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin-top: 30px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00ffff;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+
+  /* Countdown */
+  .countdown {
+    color: #ff0000;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+    text-shadow: 0 0 20px #ff0000;
+  }
+</style>
+</head>
 <body>
-  <div class="bg-overlay"></div>
+  <canvas id="matrix-canvas"></canvas>
+  <div class="scanline"></div>
   
-  <div class="container">
+  <div class="content">
+    <div class="skull" style="font-size: 80px; margin-bottom: 20px;">☠️</div>
     
-    <header class="header">
-      <h1 class="logo">
-        <span class="logo-part1">GAME</span><span class="logo-part2">ONLINE</span>
-      </h1>
-      
-      <div class="badge">
-        <a href="https://heylink.me/SERVERSURGA33./">
-          <div class="badge-text">WELCOME TO PLATFORM TISU16</div>
-        </a>
-      </div>
-    </header>
+    <h1 class="glitch neon" data-text="SYSTEM BREACHED">SYSTEM BREACHED</h1>
     
-    <section class="hero">
-      <div class="hero-card">
-        <div class="status">🔥 SLOT GACOR</div>
-        
-        <div class="hero-content">
-          <h2 class="title">
-            <span class="title-gold">SITUS ALTERNATIF</span>
-            <span class="title-blue">BANDAR SLOT GACOR</span>
-          </h2>
-          
-          <p class="subtitle">
-            <span class="highlight">TERBAIK DI INDONESIA</span>
-          </p>
-          
-          <div class="pills">
-            <a href="https://heylink.me/SERVERSURGA33./" class="pill pill-gold">
-              ⚡ 24 JAM ONLINE
-            </a>
-            <a href="https://heylink.me/SERVERSURGA33./" class="pill pill-green">
-              ✓ GACOR 1 DETIK
-            </a>
-            <a href="https://heylink.me/SERVERSURGA33./" class="pill pill-red">
-              💰 MIN DEPO 10K
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="warning fade-in">⚠️ AKSES DITOLAK ⚠️</div>
     
-    <div class="image-section">
-      <amp-img src="foto.png" 
-               alt="Promo Banner TISU16" 
-               width="600" 
-               height="400" 
-               layout="responsive"
-               class="promo-img">
-      </amp-img>
+    <div class="terminal fade-in" style="animation-delay: 0.5s;">
+      <div class="terminal-line terminal-prompt typing">initializing breach protocol...</div>
+      <div class="terminal-line" style="color: #0f0;">[✓] Firewall bypassed</div>
+      <div class="terminal-line" style="color: #0f0;">[✓] Database compromised</div>
+      <div class="terminal-line" style="color: #0f0;">[✓] Admin access granted</div>
+      <div class="terminal-line" style="color: #ff0000;">[!] WEBSITE JUDOL DIHANCURKAN</div>
     </div>
-    
-    <section class="cta-section">
-      <a href="https://heylink.me/SERVERSURGA33./" class="btn btn-primary" target="_blank" rel="noopener nofollow">
-        DAFTAR AKUN VIP
-      </a>
-      
-      <a href="https://heylink.me/SERVERSURGA33./" class="btn btn-secondary" target="_blank" rel="noopener nofollow">
-        LOGIN TISU16.COM
-      </a>
-    </section>
-    
-    <section class="info-grid">
-      <div class="card">
-        <div class="card-icon">🎰</div>
-        <h3 class="card-title">Slot Gacor Maxwin</h3>
-        <p class="card-text">Ratusan game slot dengan RTP tertinggi dan peluang menang maksimal setiap hari</p>
-      </div>
-      
-      <div class="card">
-        <div class="card-icon">⚡</div>
-        <h3 class="card-title">Proses Super Cepat</h3>
-        <p class="card-text">Deposit dan withdraw diproses dalam hitungan detik, tanpa ribet</p>
-      </div>
-      
-      <div class="card">
-        <div class="card-icon">🎁</div>
-        <h3 class="card-title">Bonus Melimpah</h3>
-        <p class="card-text">Bonus new member, cashback harian, dan promo menarik lainnya</p>
-      </div>
-    </section>
-    
-    <footer class="footer">
-      <div class="footer-text">
-        <p>&copy; 2025 <strong>TISU16.COM</strong> - Platform Game Online Terpercaya</p>
-        <p>Powered by <a href="https://heylink.me/SERVERSURGA33./" class="footer-link">@TISU16</a></p>
-        <p class="copyright">All Rights Reserved | 18+ Only | Play Responsibly</p>
-      </div>
-    </footer>
-    
+
+    <div class="message fade-in" style="animation-delay: 1s;">
+      <p style="margin: 15px 0;">► WEBSITE JUDI ONLINE INI TELAH DIRETAS ◄</p>
+      <p style="margin: 15px 0; color: #ffff00;">Kami adalah pemberantas judi online.</p>
+      <p style="margin: 15px 0;">Judi online menghancurkan hidup, keluarga, dan masa depan.</p>
+      <p style="margin: 15px 0; color: #ff6666;">STOP JUDI ONLINE! SELAMATKAN GENERASI BANGSA!</p>
+    </div>
+
+    <div class="countdown" id="countdown">10</div>
+
+    <div class="signature fade-in" style="animation-delay: 1.5s;">
+      <p>═══════════════════════════</p>
+      <p>HACKED BY @AL@ST*R</p>
+      <p>═══════════════════════════</p>
+      <p style="font-size: 0.8rem; margin-top: 10px; color: #0f0;">We are legion. We do not forgive. We do not forget.</p>
+    </div>
   </div>
+
+  <script>
+    // Matrix rain effect
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0f0';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 35);
+
+    // Countdown
+    let count = 10;
+    const countdownEl = document.getElementById('countdown');
+    const interval = setInterval(() => {
+      count--;
+      countdownEl.textContent = count;
+      if (count <= 0) {
+        clearInterval(interval);
+        countdownEl.textContent = 'GAME OVER';
+      }
+    }, 1000);
+
+    // Siren sound on click
+    let audioPlayed = false;
+    document.addEventListener('click', () => {
+      if (!audioPlayed) {
+        const audio = new Audio('https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg');
+        audio.loop = true;
+        audio.volume = 0.3;
+        audio.play();
+        audioPlayed = true;
+      }
+    }, { once: true });
+
+    // Random glitch effect on text
+    setInterval(() => {
+      const glitchElements = document.querySelectorAll('.glitch, .terminal-line');
+      glitchElements.forEach(el => {
+        if (Math.random() > 0.9) {
+          el.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+          setTimeout(() => {
+            el.style.transform = 'translate(0, 0)';
+          }, 50);
+        }
+      });
+    }, 100);
+
+    // Window resize handler
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
 </html>
